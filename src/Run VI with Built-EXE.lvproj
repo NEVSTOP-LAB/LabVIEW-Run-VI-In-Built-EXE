@@ -10,6 +10,9 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
+		<Item Name="_support" Type="Folder" URL="../_support">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
 		<Item Name="DistributedVIs" Type="Folder">
 			<Item Name="DistributedCSMModule.vi" Type="VI" URL="../DistributedVIs/DistributedCSMModule.vi"/>
 		</Item>
@@ -20,6 +23,7 @@
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Add State(s) to Queue__JKI_lib_State_Machine.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/State Machine/_JKI_lib_State_Machine.llb/Add State(s) to Queue__JKI_lib_State_Machine.vi"/>
+				<Item Name="Application Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Application Directory.vi"/>
 				<Item Name="Build State String with Arguments__JKI_lib_State_Machine.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/State Machine/_JKI_lib_State_Machine.llb/Build State String with Arguments__JKI_lib_State_Machine.vi"/>
 				<Item Name="BuildHelpPath.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/BuildHelpPath.vi"/>
 				<Item Name="Check Special Tags.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Check Special Tags.vi"/>
@@ -44,6 +48,7 @@
 				<Item Name="LVBoundsTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVBoundsTypeDef.ctl"/>
 				<Item Name="LVRectTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRectTypeDef.ctl"/>
 				<Item Name="NI_Data Type.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/Data Type/NI_Data Type.lvlib"/>
+				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
 				<Item Name="Not Found Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Not Found Dialog.vi"/>
 				<Item Name="Parse State Queue__JKI_lib_State_Machine.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/State Machine/_JKI_lib_State_Machine.llb/Parse State Queue__JKI_lib_State_Machine.vi"/>
 				<Item Name="Search and Replace Pattern.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Search and Replace Pattern.vi"/>
@@ -53,6 +58,7 @@
 				<Item Name="Set Cursor (Icon Pict).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Set Cursor (Icon Pict).vi"/>
 				<Item Name="Set Cursor.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Set Cursor.vi"/>
 				<Item Name="Set String Value.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Set String Value.vi"/>
+				<Item Name="System Exec.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/system.llb/System Exec.vi"/>
 				<Item Name="TagReturnType.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/TagReturnType.ctl"/>
 				<Item Name="Three Button Dialog CORE.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Three Button Dialog CORE.vi"/>
 				<Item Name="Three Button Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Three Button Dialog.vi"/>
@@ -75,21 +81,19 @@
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
 				<Property Name="Bld_localDestDir" Type="Path">../_build</Property>
-				<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
+				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{24F7436F-D02F-4FDD-B664-0BF9315D822D}</Property>
-				<Property Name="Bld_version.build" Type="Int">8</Property>
+				<Property Name="Bld_version.build" Type="Int">14</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">Application.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../_build/Application.exe</Property>
-				<Property Name="Destination[0].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">../_build/data</Property>
-				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{AF16EF20-6526-4396-B3D1-F07C3B6DE509}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{5306EE5F-ED3C-47EB-99C2-DC9952E52718}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Main.vi</Property>
@@ -109,18 +113,17 @@
 				<Property Name="Bld_buildCacheID" Type="Str">{A828A68F-221E-45EC-80D0-E829C8B550CB}</Property>
 				<Property Name="Bld_buildSpecName" Type="Str">My Source Distribution</Property>
 				<Property Name="Bld_localDestDir" Type="Path">../_SourceDistribution</Property>
-				<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
+				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{A3F4D0C3-1384-407C-A241-EBFDC64157EF}</Property>
-				<Property Name="Bld_version.build" Type="Int">2</Property>
+				<Property Name="Bld_version.build" Type="Int">3</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">Destination Directory</Property>
 				<Property Name="Destination[0].path" Type="Path">../_SourceDistribution</Property>
-				<Property Name="Destination[0].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">../data</Property>
 				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{E8A3BEFD-5344-4EBE-9E62-D5ACF905FFF0}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{5306EE5F-ED3C-47EB-99C2-DC9952E52718}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[1].Container.depDestIndex" Type="Int">0</Property>
